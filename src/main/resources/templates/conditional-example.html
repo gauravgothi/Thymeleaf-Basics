@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conditional Examples</title>
+</head>
+<body>
+  <h1>Example of thymeleaf conditional statement</h1>
+    <h2>User is <span th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span></h2>
+    <h2>User is <span th:style="${isActive} ? 'color:green' : 'color:red'"
+                      th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span></h2>
+
+    <h3 th:if="${gender}=='F'">Female</h3>
+  <h3 th:unless="${gender}=='F'">Female</h3>
+    <div th:switch="${#lists.size(myList)}">
+        <h4 th:case="'0'">List contain zero elements.</h4>
+        <h4 th:case="'1'">List contain 1 elements.</h4>
+        <h4 th:case="*">List contain more than 1 elements.</h4>
+    </div>
+</body>
+</html>

@@ -28,4 +28,15 @@ public class MyController {
         model.addAttribute("names",stringList);
         return "example-loop";
     }
+
+    //Handle of conditional statement
+    @RequestMapping(value = "conditional-example",method = RequestMethod.GET)
+    public String conditionHandler(Model model) {
+        List<Integer> list = List.of(11,22,33,44,55);
+        model.addAttribute("isActive",true);
+        model.addAttribute("gender","F");
+        model.addAttribute("myList",list);
+        return "conditional-example";
+
+    }
 }
