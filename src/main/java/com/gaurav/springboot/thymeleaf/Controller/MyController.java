@@ -37,6 +37,16 @@ public class MyController {
         model.addAttribute("gender","F");
         model.addAttribute("myList",list);
         return "conditional-example";
+    }
 
+
+    //Handle of inlcuding fragments 'include.replace,insert
+    @GetMapping("/fragment-example")
+    public String fragmentHandler(Model model)  {
+        return "fragment-example";
+    }
+    @GetMapping("/aboutnew")
+    public String newabout()    {
+        return "aboutnew";
     }
 }
